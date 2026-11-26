@@ -66,16 +66,16 @@ def draw_wrapped(draw, xy, text, fnt, fill, width, leading=None):
 # ---------------- news data (verified 25 Nov 2026) ----------------
 TOP = [
     {
-        "n": "1", "tag": "REPORTED", "colour": RED,
-        "headline": "TWO TANKERS HIT MINES AND CATCH FIRE IN HORMUZ",
-        "summary": "Iran's Guards say two tankers hit mines.",
-        "source": "Reuters", "art": "tanker",
+        "n": "1", "tag": "OFFICIAL", "colour": NAVY,
+        "headline": "UK ENERGY CAP TO JUMP 26% TO £2,166",
+        "summary": "Ofgem: typical cap rises from £1,723.",
+        "source": "Ofgem", "art": "cap",
     },
     {
-        "n": "2", "tag": "CLAIM", "colour": GOLD,
-        "headline": "HOUTHIS CLAIM STRIKE ON RAS TANURA REFINERY",
-        "summary": "Houthis say they hit Saudi's top refinery.",
-        "source": "Reuters", "art": "refinery",
+        "n": "2", "tag": "REPORTED", "colour": RED,
+        "headline": "CAIRO TANKER FIRE KILLS AT LEAST 31",
+        "summary": "Tanker burns on Ring Road; 21 hurt.",
+        "source": "CNN", "art": "firetruck",
     },
     {
         "n": "3", "tag": "OFFICIAL", "colour": NAVY,
@@ -86,39 +86,39 @@ TOP = [
 ]
 
 MEDIUM = [
-    ("4", "UK ENERGY CAP TO JUMP 26% TO £2,166",
-     "Ofgem: typical cap rises from £1,723.",
-     "Ofgem", "OFFICIAL", "£"),
-    ("5", "CAIRO TANKER FIRE KILLS AT LEAST 31",
-     "Tanker burns on Cairo's Ring Road; 21 hurt.",
-     "CNN", "REPORTED", "EG"),
-    ("6", "CHINA LAUNCHES SHENZHOU-24, PAKISTAN'S FIRST ASTRONAUT",
+    ("4", "TWO TANKERS HIT MINES AND BURN IN HORMUZ",
+     "Iran's Guards say two tankers hit mines.",
+     "Reuters", "REPORTED", "IR", "tanker"),
+    ("5", "HOUTHIS CLAIM STRIKE ON RAS TANURA REFINERY",
+     "Coalition says it shot down 4 drones; the refinery hit is not confirmed.",
+     "Reuters", "CLAIM", "SA", "refinery"),
+    ("6", "SHENZHOU-24 LAUNCHES WITH PAKISTAN'S FIRST ASTRONAUT",
      "Shenzhou-24 lifts off from Jiuquan.",
-     "AP", "OFFICIAL", "CN"),
+     "AP", "OFFICIAL", "CN", "rocket"),
     ("7", "KOSPI PLUNGES 6.2% AS AI SHARES TUMBLE",
      "Kospi falls to 4,697.51; Samsung -9.9%.",
-     "AP", "OFFICIAL", "KR"),
+     "AP", "OFFICIAL", "KR", "chart_down"),
     ("8", "US ECONOMY GREW 4.3% IN Q3, FASTEST IN 3 YEARS",
      "Q3 growth revised up from 3.4%.",
-     "Reuters", "OFFICIAL", "US"),
-    ("9", "SOLOMON ISLANDS SIGNS SECURITY TREATY WITH AUSTRALIA",
+     "Reuters", "OFFICIAL", "US", "chart_up"),
+    ("9", "SOLOMON ISLANDS SIGNS TREATY WITH AUSTRALIA",
      "Australia named primary security partner.",
-     "NYT", "OFFICIAL", "AU"),
+     "NYT", "OFFICIAL", "AU", "treaty"),
     ("10", "JUDGES URGE DROP OF KEY NETANYAHU BRIBERY CASE",
      "Court says conviction in Case 4000 unlikely.",
-     "Reuters", "REPORTED", "IL"),
+     "Reuters", "REPORTED", "IL", "gavel"),
     ("11", "AT LEAST 490,334 RUSSIAN SOLDIERS DEAD, BBC FINDS",
      "Leaked records put the toll since Feb 2022.",
-     "BBC", "REPORTED", "RU"),
+     "BBC", "REPORTED", "RU", "document"),
     ("12", "BANGLADESH RAISES GARMENT WAGE 36% AFTER PROTESTS",
      "Entry wage rises to 17,000 taka a month.",
-     "Daily Brief", "REPORTED", "BD"),
+     "Daily Brief", "REPORTED", "BD", "factory"),
 ]
 
 MORE = [
     ("13", "Poland to set no-fly zone on Ukraine border", "Poland", "REPORTED"),
     ("14", "RSF drone strikes kill 19 in Sudan's Blue Nile", "Sudan", "REPORTED"),
-    ("15", "26 miners trapped in flooded West Java gold mine", "Indonesia", "REPORTED"),
+    ("15", "9 dead, 17 trapped in flooded West Java gold mine", "Indonesia", "REPORTED"),
     ("16", "North Korea expels Swiss diplomat, shuts office", "North Korea", "OFFICIAL"),
     ("17", "US proposes extra tariffs on Brazilian sugar, aircraft", "USA / Brazil", "OFFICIAL"),
     ("18", "Saudi-led coalition says it hit Hodeidah port", "Yemen", "CLAIM"),
@@ -142,22 +142,23 @@ MORE = [
     ("36", "ESA Hera reveals Dimorphos crater images", "Europe", "OFFICIAL"),
     ("37", "Greece holds 24-hour nationwide strike", "Greece", "REPORTED"),
     ("38", "US jobless claims fall to 189,000", "USA", "OFFICIAL"),
+    ("39", "Pakistan and Russia sign 5-year trade programme", "Pakistan", "OFFICIAL"),
+    ("40", "Record king tides flood California coast", "USA", "REPORTED"),
 ]
 
 TIMELINE = [
     ("00:18 UTC", "Shenzhou-24 launches"),
-    ("Morning", "Kospi falls 6.2%"),
-    ("Midday", "UK cap rise announced"),
-    ("Afternoon", "US tariffs proposed"),
+    ("07:00 UTC", "UK cap rise announced"),
+    ("13:00 UTC", "Ras Tanura claim filed"),
     ("16:08 UTC", "Cairo tanker fire"),
 ]
 
 PINS = [  # (number, lon, lat, label)
-    ("1", 56.5, 26.5, "Hormuz"), ("2", 50.2, 26.6, "Ras Tanura"),
-    ("5", 31.2, 30.0, "Cairo"), ("4", -0.1, 51.5, "London"),
-    ("6", 100.3, 41.0, "Jiuquan"), ("7", 127.0, 37.5, "Seoul"),
-    ("9", 149.1, -35.3, "Canberra"), ("15", 106.8, -6.6, "Bogor"),
-    ("3", -77.0, 38.9, "Washington"),
+    ("1", -0.1, 51.5, "London"), ("2", 31.2, 30.0, "Cairo"),
+    ("3", -77.0, 38.9, "Washington"), ("4", 56.5, 26.5, "Hormuz"),
+    ("5", 50.2, 26.6, "Ras Tanura"), ("6", 100.3, 41.0, "Jiuquan"),
+    ("7", 127.0, 37.5, "Seoul"), ("9", 149.1, -35.3, "Canberra"),
+    ("15", 106.8, -6.6, "Bogor"),
 ]
 
 
@@ -184,6 +185,28 @@ def draw_art(draw, kind, x, y, w, h):
         for i in range(3):
             draw.ellipse([x + 235 + i * 5, y + 10 + i * 9, x + 258 + i * 5, y + 33 + i * 9],
                          fill=(110, 110, 115))
+    elif kind == "cap":  # lightning bolt + pound sign + up arrow
+        draw.polygon([(x + 34, y + 6), (x + 66, y + 6), (x + 50, y + 34),
+                      (x + 68, y + 34), (x + 28, y + 74), (x + 42, y + 42),
+                      (x + 26, y + 42)], fill=(230, 180, 20))
+        draw.text((x + 96, y + 2), "£", font=font(SANS_B, 52), fill=NAVY)
+        draw.polygon([(x + 214, y + 34), (x + 236, y + 34), (x + 225, y + 8)], fill=RED)
+        draw.rectangle([x + 220, y + 32, x + 230, y + 68], fill=RED)
+        draw.text((x + 244, y + 40), "26%", font=font(SANS_B, 20), fill=RED)
+    elif kind == "firetruck":  # fuel tanker truck with flames and smoke
+        draw.rectangle([x, y + 64, x + w, y + 68], fill=(150, 150, 155))
+        for fx, fy in [(x + 60, y + 12), (x + 120, y + 16)]:
+            draw.polygon([(fx, fy + 22), (fx + 11, fy), (fx + 22, fy + 22)], fill=(230, 90, 20))
+        for fx, fy, s in [(x + 82, y + 0, 13), (x + 132, y + 4, 10)]:
+            draw.ellipse([fx, fy, fx + s, fy + s], fill=(120, 120, 125))
+        draw.rectangle([x + 20, y + 26, x + 190, y + 58], fill=(205, 205, 210),
+                       outline=(90, 90, 95), width=2)
+        draw.rectangle([x + 20, y + 26, x + 190, y + 34], fill=(170, 170, 175))
+        draw.rectangle([x + 196, y + 34, x + 250, y + 58], fill=RED)
+        draw.rectangle([x + 210, y + 38, x + 232, y + 48], fill=(200, 230, 245))
+        for wx in [x + 50, x + 120, x + 222]:
+            draw.ellipse([wx - 11, y + 52, wx + 11, y + 74], fill=(20, 20, 20))
+            draw.ellipse([wx - 4, y + 59, wx + 4, y + 67], fill=(150, 150, 155))
     else:  # tariffs: document + bars
         draw.rectangle([x + 20, y + 8, x + 130, y + h - 8], fill=(255, 255, 255),
                        outline=(40, 40, 40), width=2)
@@ -194,6 +217,71 @@ def draw_art(draw, kind, x, y, w, h):
             draw.rectangle([bx, y + h - 14 - bh, bx + 34, y + h - 14], fill=NAVY if i == 0 else TEAL)
             draw.text((bx, y + h - 34 - bh), lab, font=font(SANS_B, 15), fill=INK)
         draw.text((x + 150, y + h - 12), "CN  EU", font=font(SANS_B, 13), fill=GREY)
+
+
+def draw_mini_art(draw, kind, x, y, w, h):
+    """Small flat vector scene for a medium panel, in a w x h box."""
+    if kind == "tanker":
+        for fx, fy, s in [(x + 10, y + 2, 10), (x + 26, y + 6, 8)]:
+            draw.ellipse([fx, fy, fx + s, fy + s], fill=(120, 120, 125))
+        for fx, fy in [(x + 14, y + 16), (x + 30, y + 20)]:
+            draw.polygon([(fx, fy + 12), (fx + 6, fy), (fx + 12, fy + 12)], fill=(230, 90, 20))
+        draw.rectangle([x + 2, y + 28, x + w - 2, y + 36], fill=(30, 30, 40))
+        draw.rectangle([x + w - 18, y + 18, x + w - 4, y + 28], fill=(60, 60, 75))
+        draw.rectangle([x, y + 36, x + w, y + h], fill=(20, 60, 110))
+    elif kind == "refinery":
+        for tx in [x + 4, x + 22, x + 40]:
+            draw.rectangle([tx, y + 14, tx + 13, y + 34], fill=(90, 95, 105))
+            draw.rectangle([tx + 2, y + 8, tx + 11, y + 14], fill=(120, 125, 135))
+        draw.rectangle([x, y + 34, x + w, y + h], fill=(70, 70, 80))
+        draw.polygon([(x + 28, y + 18), (x + 34, y + 6), (x + 40, y + 18)], fill=(230, 90, 20))
+        draw.ellipse([x + 48, y + 2, x + 56, y + 10], fill=(110, 110, 115))
+    elif kind == "rocket":
+        draw.text((x + 2, y + 2), "✦", font=font(SANS_B, 11), fill=(150, 150, 160))
+        draw.text((x + 48, y + 10), "✦", font=font(SANS_B, 9), fill=(150, 150, 160))
+        draw.polygon([(x + 26, y + 10), (x + 36, y + 10), (x + 31, y)], fill=RED)
+        draw.rectangle([x + 26, y + 10, x + 36, y + 28], fill=(235, 235, 238),
+                       outline=(120, 120, 130))
+        draw.ellipse([x + 28, y + 15, x + 34, y + 21], fill=(40, 90, 160))
+        draw.polygon([(x + 26, y + 24), (x + 20, y + 32), (x + 26, y + 30)], fill=RED)
+        draw.polygon([(x + 36, y + 24), (x + 42, y + 32), (x + 36, y + 30)], fill=RED)
+        draw.polygon([(x + 28, y + 28), (x + 34, y + 28), (x + 31, y + h)], fill=(230, 90, 20))
+    elif kind == "chart_down":
+        for bx, bh in [(x + 6, 24), (x + 22, 16), (x + 38, 8)]:
+            draw.rectangle([bx, y + 34 - bh, bx + 12, y + 34], fill=(178, 34, 34))
+        draw.line([x + 4, y + 6, x + 56, y + 30], fill=RED, width=3)
+        draw.polygon([(x + 50, y + 22), (x + 58, y + 30), (x + 48, y + 32)], fill=RED)
+    elif kind == "chart_up":
+        for bx, bh in [(x + 6, 10), (x + 22, 18), (x + 38, 26)]:
+            draw.rectangle([bx, y + 34 - bh, bx + 12, y + 34], fill=NAVY if bx < x + 30 else TEAL)
+        draw.line([x + 4, y + 30, x + 56, y + 6], fill=(14, 90, 90), width=3)
+        draw.polygon([(x + 50, y + 14), (x + 58, y + 6), (x + 48, y + 4)], fill=(14, 90, 90))
+    elif kind == "treaty":
+        draw.rectangle([x + 10, y + 4, x + 52, y + 34], fill=(255, 255, 255),
+                       outline=(100, 100, 110), width=2)
+        for i in range(3):
+            draw.line([x + 16, y + 12 + i * 7, x + 46, y + 12 + i * 7],
+                      fill=(140, 140, 145), width=2)
+        draw.ellipse([x + 42, y + 28, x + 54, y + h], fill=RED)
+        draw.line([x + 4, y + h - 4, x + 40, y + h - 4], fill=(40, 90, 160), width=2)
+    elif kind == "gavel":
+        draw.rectangle([x + 10, y + 8, x + 42, y + 18], fill=(120, 85, 50))
+        draw.rectangle([x + 24, y + 18, x + 30, y + 32], fill=(90, 60, 35))
+        draw.rectangle([x + 8, y + 34, x + 52, y + h], fill=(150, 150, 155))
+    elif kind == "document":
+        draw.rectangle([x + 14, y + 2, x + 48, y + 34], fill=(255, 255, 255),
+                       outline=(100, 100, 110), width=2)
+        for i in range(3):
+            draw.line([x + 19, y + 10 + i * 7, x + 43, y + 10 + i * 7],
+                      fill=(140, 140, 145), width=2)
+        draw.rectangle([x + 19, y + 28, x + 43, y + 32], fill=RED)
+    else:  # factory
+        draw.ellipse([x + 48, y, x + 56, y + 8], fill=(120, 120, 125))
+        draw.rectangle([x + 50, y + 6, x + 56, y + 22], fill=(70, 70, 80))
+        draw.polygon([(x + 2, y + 36), (x + 2, y + 20), (x + 12, y + 28), (x + 22, y + 20),
+                      (x + 32, y + 28), (x + 42, y + 20), (x + 52, y + 28), (x + 58, y + 24),
+                      (x + 58, y + 36)], fill=(90, 95, 105))
+        draw.ellipse([x + 4, y + 26, x + 16, y + 38], fill=GOLD)
 
 
 CONTINENTS = [
@@ -222,7 +310,7 @@ def draw_map(draw, x, y, w, h):
     for cont in CONTINENTS:
         pts = [px(lon, lat) for lon, lat in cont]
         draw.polygon(pts, fill=(190, 200, 185), outline=(140, 150, 140))
-    JITTER = {"1": (16, -12), "2": (-16, 10), "5": (0, 12), "4": (0, -10)}
+    JITTER = {"4": (16, -12), "5": (-16, 10), "2": (0, 12), "1": (0, -10)}
     for num, lon, lat, label in PINS:
         cx, cy = px(lon, lat)
         dx, dy = JITTER.get(num, (0, 0))
@@ -251,9 +339,10 @@ def main():
            fill=(255, 255, 255), anchor="mm")
 
     # Stats strip
-    stats = ["38 STORIES", "9 REGIONS", "3 TOP STORIES", "SOURCES: REUTERS • AP • BBC"]
+    stats = ["40 STORIES", "9 REGIONS", "3 TOP STORIES",
+             "SOURCES: REUTERS • AP • BBC • CNN • NYT • UN NEWS • ESA"]
     x = 24
-    widths = [170, 150, 210, 446]
+    widths = [140, 130, 170, 536]
     for txt, wd in zip(stats, widths):
         d.rectangle([x, 172, x + wd, 198], outline=(150, 140, 120), width=1)
         d.text((x + wd // 2, 185), txt, font=font(SANS_B, 14), fill=NAVY, anchor="mm")
@@ -281,32 +370,36 @@ def main():
                font=font(SANS_B, 11), fill=GREY, anchor="lb")
 
     # Section header: Day in brief
-    d.rectangle([24, 446, W - 24, 470], fill=NAVY)
-    d.text((36, 458), "THE DAY IN BRIEF  —  9 MORE STORIES", font=font(SANS_B, 17),
+    d.rectangle([24, 442, W - 24, 466], fill=NAVY)
+    d.text((36, 454), "THE DAY IN BRIEF  —  9 MORE STORIES", font=font(SANS_B, 17),
            fill=(255, 255, 255), anchor="lm")
 
-    # Medium 9: 3 cols x 3 rows (headline max 2 lines, summary 1 line)
-    mcol_w, mrow_h = 312, 56
-    for i, (num, head, summ, src, tag, code) in enumerate(MEDIUM):
+    # Medium 9: 3 cols x 3 rows, each with a small flat scene + code chip
+    mcol_w, mrow_h = 312, 66
+    for i, (num, head, summ, src, tag, code, art) in enumerate(MEDIUM):
         col, row = i % 3, i // 3
         x0 = 24 + col * (mcol_w + gap)
-        y0 = 478 + row * mrow_h
-        d.rectangle([x0, y0, x0 + 44, y0 + 44], fill=TEAL if i % 2 == 0 else NAVY)
-        d.text((x0 + 22, y0 + 22), code, font=font(SANS_B, 14), fill=(255, 255, 255), anchor="mm")
-        tx = x0 + 52
+        y0 = 474 + row * mrow_h
+        d.rectangle([x0, y0, x0 + mcol_w, y0 + mrow_h], outline=(160, 150, 130), width=1)
+        d.rectangle([x0, y0, x0 + 70, y0 + mrow_h], fill=(238, 234, 222))
+        d.rectangle([x0, y0, x0 + 70, y0 + 18], fill=TEAL if i % 2 == 0 else NAVY)
+        d.text((x0 + 35, y0 + 9), code, font=font(SANS_B, 12), fill=(255, 255, 255), anchor="mm")
+        draw_mini_art(d, art, x0 + 4, y0 + 22, 62, 40)
+        tx = x0 + 78
+        tw = mcol_w - 78
         hf = font(SANS_B, 13)
-        for ln in wrap(d, head, hf, mcol_w - 52)[:2]:
-            d.text((tx, y0), ln, font=hf, fill=INK)
-            y0 += 15
+        hy = y0
+        for ln in wrap(d, head, hf, tw)[:2]:
+            d.text((tx, hy), ln, font=hf, fill=INK)
+            hy += 15
         sf = font(SANS, 11)
-        sline = summ
-        while d.textlength(sline, font=sf) > mcol_w - 52 and len(sline) > 4:
-            sline = sline[:-4].rstrip() + "…"
-        d.text((tx, y0), sline, font=sf, fill=(70, 70, 70))
-        d.text((tx, 478 + row * mrow_h + 48), f"{src} • {tag}", font=font(SANS_B, 9), fill=GREY)
+        for ln in wrap(d, summ, sf, tw)[:2]:
+            d.text((tx, hy), ln, font=sf, fill=(70, 70, 70))
+            hy += 12
+        d.text((tx, y0 + 56), f"{src} • {tag}", font=font(SANS_B, 9), fill=GREY)
 
     # Map + timeline
-    map_x, map_y, map_w, map_h = 24, 654, 600, 96
+    map_x, map_y, map_w, map_h = 24, 680, 600, 80
     d.text((map_x, map_y - 4), "WHERE IT HAPPENED  —  SCHEMATIC MAP",
            font=font(SANS_B, 14), fill=NAVY)
     draw_map(d, map_x, map_y + 16, map_w, map_h - 16)
@@ -317,26 +410,26 @@ def main():
     for j, (when, what) in enumerate(TIMELINE):
         d.ellipse([tl_x + 12, ty + 3, tl_x + 22, ty + 13], fill=RED)
         if j < len(TIMELINE) - 1:
-            d.line([tl_x + 17, ty + 13, tl_x + 17, ty + 22], fill=RED, width=2)
+            d.line([tl_x + 17, ty + 13, tl_x + 17, ty + 17], fill=RED, width=2)
         d.text((tl_x + 30, ty), when, font=font(SANS_B, 12), fill=RED)
         d.text((tl_x + 118, ty), what, font=font(SANS, 12), fill=INK)
-        ty += 19
+        ty += 14
 
     # More list
-    d.rectangle([24, 774, W - 24, 798], fill=NAVY)
-    d.text((36, 786), "MORE ON 25 NOVEMBER  —  26 MORE STORIES", font=font(SANS_B, 15),
+    d.rectangle([24, 772, W - 24, 796], fill=NAVY)
+    d.text((36, 784), "MORE ON 25 NOVEMBER  —  28 MORE STORIES", font=font(SANS_B, 15),
            fill=(255, 255, 255), anchor="lm")
     for i, (num, head, src, tag) in enumerate(MORE):
         col, row = i % 2, i // 2
         x0 = 24 + col * 500
-        y0 = 806 + row * 11
+        y0 = 804 + row * 11
         d.text((x0, y0), f"{num}.", font=font(SANS_B, 11), fill=RED)
         d.text((x0 + 28, y0), head, font=font(SANS, 11), fill=INK)
         # source right-aligned in its column
         d.text((x0 + 488, y0), src, font=font(SANS_B, 10), fill=GREY, anchor="ra")
 
     # Footer: Date Check + labels + exclusions (date-checked both ways)
-    fy = 956
+    fy = 966
     d.text((24, fy), "DATE CHECK: Every story above happened or was first reported on Wednesday, 25 November 2026.",
            font=font(SANS_B, 12), fill=RED)
     d.text((24, fy + 14),
